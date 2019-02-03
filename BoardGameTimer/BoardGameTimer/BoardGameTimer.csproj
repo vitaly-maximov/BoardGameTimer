@@ -93,5 +93,11 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BoardGameTimer.ViewModel\BoardGameTimer.ViewModel.csproj">
+      <Project>{065840a7-63e6-4539-a0e9-3019e94ecd14}</Project>
+      <Name>BoardGameTimer.ViewModel</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
