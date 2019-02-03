@@ -4,14 +4,81 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800"
-        DataContext="{Binding Source={StaticResource Locator}, Path=MainViewModel, Mode=OneTime}" >
+        Title="Board Game Timer" Height="450" Width="800"
+        DataContext="{Binding Source={StaticResource Locator}, Path=MainViewModel, Mode=OneTime}">
+
+    <Window.InputBindings>
+        <KeyBinding Key="Delete" Command="{Binding ResetTimer, Mode=OneTime}" />
+        <KeyBinding Key="Return" Command="{Binding ToggleTimer, Mode=OneTime}" />
+        <KeyBinding Key="Space" Command="{Binding MoveToNextUser, Mode=OneTime}" />
+        <KeyBinding Key="Backspace" Command="{Binding MoveToPreviousUser, Mode=OneTime}" />
+    </Window.InputBindings>
     
-    <Grid>
-        <TextBlock 
-            VerticalAlignment="Center"
-            HorizontalAlignment="Center"
-            FontSize="40"
-            Text="{Binding Message}" />
-    </Grid>
+    <Viewbox>
+        <ItemsControl
+            Grid.IsSharedSizeScope="True"
+            ItemsSource="{Binding Users, Mode=OneTime}">
+            
+            <ItemsControl.ItemTemplate>
+                <DataTemplate>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" SharedSizeGroup="Color" />
+                            <ColumnDefinition Width="Auto" SharedSizeGroup="Name" />
+                            <ColumnDefinition Width="Auto" SharedSizeGroup="Time" />
+                        </Grid.ColumnDefinitions>
+
+                        <Grid.Style>
+                            <Style TargetType="Grid">
+                                <Style.Triggers>
+                                    <DataTrigger Binding="{Binding IsSelected, Mode=OneWay}" Value="True">
+                                        <Setter Property="Background" Value="LightYellow"/>
+                                    </DataTrigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Grid.Style>
+
+                        <Rectangle 
+                            Grid.Row="0" 
+                            Grid.Column="0"
+                            Margin="5"
+                            Width="15"
+                            Height="5"
+                            VerticalAlignment="Center"
+                            HorizontalAlignment="Center">
+
+                            <Rectangle.Fill>
+                                <SolidColorBrush Color="{Binding Color, Mode=OneTime}" />
+                            </Rectangle.Fill>
+                        </Rectangle>
+
+                        <TextBlock 
+                            Grid.Row="0"
+                            Grid.Column="1"
+                            Margin="5"
+                            VerticalAlignment="Center"
+                            Text="{Binding Model.Name, Mode=OneTime}" />
+
+                        <TextBlock 
+                            Grid.Row="0"
+                            Grid.Column="2"
+                            Margin="5"
+                            VerticalAlignment="Center"
+                            Text="{Binding SpentTime, StringFormat=hh\\:mm\\:ss\\.fff}" >
+                            
+                            <TextBlock.Style>
+                                <Style TargetType="TextBlock">
+                                    <Style.Triggers>
+                                        <DataTrigger Binding="{Binding IsSelected, Mode=OneWay}" Value="True">
+                                            <Setter Property="Foreground" Value="Red"/>                                            
+                                        </DataTrigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </TextBlock.Style>
+                        </TextBlock>
+                    </Grid>
+                </DataTemplate>
+            </ItemsControl.ItemTemplate>
+        </ItemsControl>
+    </Viewbox>
 </Window>

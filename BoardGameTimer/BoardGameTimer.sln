@@ -7,6 +7,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BoardGameTimer", "BoardGame
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BoardGameTimer.ViewModel", "BoardGameTimer.ViewModel\BoardGameTimer.ViewModel.csproj", "{065840A7-63E6-4539-A0E9-3019E94ECD14}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BoardGameTimer.Model", "BoardGameTimer.Model\BoardGameTimer.Model.csproj", "{4D21961F-A21D-4469-AE27-46377D186FD4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BoardGameTimer.Core", "BoardGameTimer.Core\BoardGameTimer.Core.csproj", "{DEF5F836-944B-4F0F-A2A2-6E5AB8BB6D21}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +25,14 @@ Global
 		{065840A7-63E6-4539-A0E9-3019E94ECD14}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{065840A7-63E6-4539-A0E9-3019E94ECD14}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{065840A7-63E6-4539-A0E9-3019E94ECD14}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4D21961F-A21D-4469-AE27-46377D186FD4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4D21961F-A21D-4469-AE27-46377D186FD4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4D21961F-A21D-4469-AE27-46377D186FD4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4D21961F-A21D-4469-AE27-46377D186FD4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DEF5F836-944B-4F0F-A2A2-6E5AB8BB6D21}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DEF5F836-944B-4F0F-A2A2-6E5AB8BB6D21}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DEF5F836-944B-4F0F-A2A2-6E5AB8BB6D21}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DEF5F836-944B-4F0F-A2A2-6E5AB8BB6D21}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
